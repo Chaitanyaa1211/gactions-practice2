@@ -12,7 +12,6 @@ jobs:
       - name: simple command task
 
         run: |
-          pwd
-          ls -la
-          whoami
-          uname -a
+          docker --version
+          git --version
+          kubectl version --client
