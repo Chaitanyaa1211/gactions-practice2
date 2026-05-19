@@ -1,0 +1,18 @@
+name: simple commands task
+
+on:
+  push:
+
+jobs:
+
+  commands:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: simple command task
+
+        run: |
+          pwd
+          ls -la
+          whoami
+          uname -a
