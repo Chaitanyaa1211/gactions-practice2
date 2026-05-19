@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout stage
+        uses: actions/checkout@4
+
       - name: simple command task
-      - uses: actions/checkout@4
 
         run: |
           docker --version
