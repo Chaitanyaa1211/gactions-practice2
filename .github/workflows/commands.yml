@@ -5,19 +5,39 @@ on:
 
 jobs:
 
-  commands:
+  CHECKOUT:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout stage
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: list 
-        run: ls -a 
+      
+  BUILD:
+    runs-on: ubuntu-latest
+    needs: CHECKOUT 
 
-      - name: simple command task
+    steps:
+      - run: echo "running building stage"
 
-        run: |
-          docker --version
-          git --version
-          kubectl version --client
+      - run: echo "building" > app.txt
+
+      - uses: actions/upload-artifact@v4
+
+        with:
+          name: app-file
+          path: app.txt
+
+  TEST:
+    runs-on: ubuntu-latest
+    needs: BUILD
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: app-file
+
+      - run: cat app.txt
+
+
+
+
