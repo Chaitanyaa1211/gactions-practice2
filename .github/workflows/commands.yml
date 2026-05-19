@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: checkout stage
         uses: actions/checkout@v4
+
+      - name: list 
         run: ls -a 
 
       - name: simple command task
