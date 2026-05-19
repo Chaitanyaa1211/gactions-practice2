@@ -6,7 +6,7 @@ on:
 jobs:
 
   commands:
-    runs-on: ubuntu-alatesttt
+    runs-on: ubuntu-latest
 
     steps:
       - name: simple command task
