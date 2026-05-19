@@ -10,6 +10,7 @@ jobs:
 
     steps:
       - name: simple command task
+      - uses: actions/checkout@4
 
         run: |
           docker --version
