@@ -1,4 +1,4 @@
-name: runner info test
+name: runner info tesst
 
 on:
   workflow_dispatch:
