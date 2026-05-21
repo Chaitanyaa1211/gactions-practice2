@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - run: |
-        uname -a
-        nproc
-        free -h
-        docker --version
+         uname -a
+         nproc
+         free -h
+         docker --version
