@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: show runner info
-      - run: |
+        run: |
           uname -a
           nproc
           free -h
