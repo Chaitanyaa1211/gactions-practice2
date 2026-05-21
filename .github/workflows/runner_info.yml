@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: show runner info
       - run: |
-         uname -a
-         nproc
-         free -h
-         docker --version
+          uname -a
+          nproc
+          free -h
+          docker --version
