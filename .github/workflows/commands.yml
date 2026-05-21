@@ -1,43 +1,19 @@
-name: simple commands task
+name: runner info
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
 
-  CHECKOUT:
+  info:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
-
-      
-  BUILD:
-    runs-on: ubuntu-latest
-    needs: CHECKOUT 
-
-    steps:
-      - run: echo "running building stage"
-
-      - run: echo "building" > app.txt
-
-      - uses: actions/upload-artifact@v4
-
-        with:
-          name: app-file
-          path: app.txt
-
-  TEST:
-    runs-on: ubuntu-latest
-    needs: BUILD
-
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: app-file
-
-      - run: cat app.txt
-
+  steps:
+    - run: |
+        uname -a
+        nproc
+        free -h
+        docker --version
 
 
 
