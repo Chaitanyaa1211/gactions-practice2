@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: show runner info
+      - name: show runner details
         run: |
           uname -a
           nproc
